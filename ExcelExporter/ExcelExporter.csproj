@@ -64,7 +64,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Graphicloads-Filetype-Excel-xls.ico</ApplicationIcon>
+    <ApplicationIcon>ExcelExporter.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -121,8 +121,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Graphicloads-Filetype-Excel-xls.ico" />
-    <Content Include="images\Graphicloads-Filetype-Excel-xls.ico" />
+    <Content Include="ExcelExporter.ico" />
+    <Content Include="images\ExcelExporter.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
