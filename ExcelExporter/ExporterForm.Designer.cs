@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExporterForm));
             this.chbOpenFile = new System.Windows.Forms.CheckBox();
             this.lblSaveToPath = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
@@ -130,7 +131,6 @@
             this.cbObjectNames.Name = "cbObjectNames";
             this.cbObjectNames.Size = new System.Drawing.Size(173, 21);
             this.cbObjectNames.TabIndex = 14;
-            //this.cbObjectNames.SelectedIndexChanged += new System.EventHandler(this.cbObjectNames_SelectedIndexChanged);
             // 
             // cbObjectTypes
             // 
@@ -186,6 +186,7 @@
             this.Controls.Add(this.lblObjectType);
             this.Controls.Add(this.lblServerAndDataBase);
             this.Controls.Add(this.lblServerAndDataBaseInfo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExporterForm";
             this.Text = "ExporterForm";
             this.Load += new System.EventHandler(this.ExporterForm_Load);
