@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5F5484E-2967-473D-B73C-954C0CF3C247}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ExcelExporter</RootNamespace>
-    <AssemblyName>ExcelExporter</AssemblyName>
+    <ProjectGuid>{A96F3E34-B861-429B-8538-3C30E2C6296C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExcelExporter.DataAccess</RootNamespace>
+    <AssemblyName>ExcelExporter.DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,10 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,49 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\CurrentSettings.cs" />
-    <Compile Include="ExporterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ExporterForm.Designer.cs">
-      <DependentUpon>ExporterForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="DataAccessObject.cs" />
+    <Compile Include="DataConnection.cs" />
+    <Compile Include="General.cs" />
+    <Compile Include="ObjectParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExcelExporter.BusinessEntity\ExcelExporter.BusinessEntity.csproj">
       <Project>{6c5fb135-c349-4685-b4fd-91c6e1c7ebf3}</Project>
       <Name>ExcelExporter.BusinessEntity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExcelExporter.BusinessLogic\ExcelExporter.BusinessLogic.csproj">
-      <Project>{47b61018-cbff-4438-b58d-c2b55de64fe2}</Project>
-      <Name>ExcelExporter.BusinessLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ExcelExporter.DataAccess\ExcelExporter.DataAccess.csproj">
-      <Project>{a96f3e34-b861-429b-8538-3c30e2c6296c}</Project>
-      <Name>ExcelExporter.DataAccess</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ExporterForm.resx">
-      <DependentUpon>ExporterForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="images\Graphicloads-Filetype-Excel-xls.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
