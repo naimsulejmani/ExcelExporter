@@ -8,20 +8,20 @@ namespace ExcelExporter.BusinessLogic
     {
         public static AdoDotNetDataProvider DataProvider
         {
-            get => DAO.DataConnection.DataProvider;
-            set => DAO.DataConnection.DataProvider = value;
+            get { return DAO.DataConnection.DataProvider; }
+            set { DAO.DataConnection.DataProvider = value; }
         }
 
         public static String DefaultConnectionString
         {
-            get => DAO.DataConnection.ConnectionString;
-            set => DAO.DataConnection.ConnectionString = value;
+            get { return DAO.DataConnection.ConnectionString; }
+            set { DAO.DataConnection.ConnectionString = value; }
         }
 
         public static String ConnectionString2
         {
-            get => DAO.DataConnection.ConnectionString;
-            set => DAO.DataConnection.ConnectionString = value;
+            get { return DAO.DataConnection.ConnectionString; }
+            set { DAO.DataConnection.ConnectionString = value; }
         }
 
         public static bool CanConnect()

@@ -63,7 +63,7 @@ namespace ExcelExporter
                     var ee = new BusinessEntity.ExcelExporter(ExcelTypeExporter.AutomationUseArray, txtFileName.Text);
                     DateTime dt1 = DateTime.Now;
                     ee.Automation_QueryTable(txtFileName.Text, BL.DefaultConnectionString, rtbSqlQuery.Text);
-                    Console.WriteLine(DateTime.Now - dt1);
+                    Console.WriteLine(txtFileName.Text+" - "+(DateTime.Now - dt1));
                     if (chbOpenFile.Checked)
                         Process.Start(txtFileName.Text);
                     else MessageBox.Show("Fajlli u eksportua me sukses");
@@ -75,7 +75,7 @@ namespace ExcelExporter
                     var ee = new BusinessEntity.ExcelExporter(ExcelTypeExporter.AutomationUseArray, txtFileName.Text);
                     DateTime dt1 = DateTime.Now;
                     ee.Automation_QueryTable(txtFileName.Text, BL.DefaultConnectionString, rtbSqlQuery.Text);
-                    Console.WriteLine(DateTime.Now - dt1);
+                    Console.WriteLine(txtFileName.Text + " - " + (DateTime.Now - dt1));
                     if (chbOpenFile.Checked)
                         Process.Start(txtFileName.Text);
                     else MessageBox.Show("Fajlli u eksportua me sukses");
