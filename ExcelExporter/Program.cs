@@ -29,15 +29,18 @@ namespace ExcelExporter
             {
                 try
                 {
+                    string connectionString = "", sqlQuery = "";
                     var location = ConfigurationManager.AppSettings["location"].ToString();
-                    if (args[1] == null || args[2] == null || args[0] == null && string.IsNullOrEmpty(location)) return;
-                    args[1] = ConfigurationManager.ConnectionStrings[args[1]].ConnectionString;
 
-                    BL.DefaultConnectionString = args[1];
+                    if (args[1] == null || args[2] == null || args[0] == null && string.IsNullOrEmpty(location)) return;
+                    string filePath = location + args[0];
+                    connectionString = ConfigurationManager.ConnectionStrings[args[1]].ConnectionString;
+                    sqlQuery = args[2];
+                    BL.DefaultConnectionString = connectionString;
                     if (BL.CanConnect())
                     {
-                        var ee = new BusinessEntity.ExcelExporter(ExcelTypeExporter.AutomationUseArray, args[0]);
-                        ee.Automation_QueryTable(args[0], args[1], args[2]);
+                        var ee = new BusinessEntity.ExcelExporter(ExcelTypeExporter.AutomationUseArray, filePath);
+                        ee.Automation_QueryTable(filePath, connectionString, sqlQuery);
                         //Process.Start(/*location + */
                         // ReSharper disable once AssignNullToNotNullAttribute
                         //fileName: args[0]);
@@ -47,12 +50,11 @@ namespace ExcelExporter
                         throw new Exception("asdf");
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
                     return;
                 }
-
-
             }
             else
             {
